@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodHaven Studios</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #000; /* Fundo preto */
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Fundo fixo do cabeçalho */
+        .parallax {
+            position: relative;
+            background-image: url('blood.jpg'); /* Caminho da sua imagem inicial */
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        header p {
+            font-size: 1.8em;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Fundo animado de névoa */
+        .fog-background {
+            position: relative;
+            background: #000; /* Fundo preto */
+            overflow: hidden;
+        }
+
+        .fog {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+            filter: blur(15px);
+            animation: moveFog 20s infinite linear;
+        }
+
+        @keyframes moveFog {
+            0% {
+                transform: translate(-50%, -50%);
+            }
+            100% {
+                transform: translate(50%, 50%);
+            }
+        }
+
+        /* Estilo dos cards */
+        .card {
+            background: rgba(0, 0, 0, 0.9);
+            border: 3px solid red;
+            padding: 30px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            max-width: 800px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .card h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .card p {
+            font-size: 1.5em;
+            line-height: 1.6;
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        footer p {
+            font-size: 1.2em;
+        }
+
+        /* Estilos de hover nos links */
+        a {
+            color: white; /* Cor inicial */
+            text-decoration: none; /* Remove sublinhado */
+            transition: color 0.3s ease; /* Transição suave para a cor */
+        }
+
+        a:hover {
+            color: red; /* Cor quando passar o mouse */
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+            .card h2 {
+                font-size: 2.5em;
+            }
+
+            .card p {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fundo fixo com imagem -->
+    <div class="parallax">
+        <header>
+            <h1>BloodHaven Studios</h1>
+            <p>Sussurros nas sombras, sangue nas telas.</p>
+        </header>
+    </div>
+
+    <!-- Seção com fundo animado de névoa -->
+    <div class="fog-background">
+        <div class="fog"></div>
+
+        <!-- Seção "Nossos Jogos" -->
+        <section>
+            <div class="card">
+                <h2><a href="nossosjogos.html">Nossos Jogos</a></h2>
+                <p>Explore nossos jogos, criados com paixão e dedicação. Cada jogo traz uma experiência única, imersiva e envolvente, com histórias sombrias e desafiadoras. Prepare-se para enfrentar o desconhecido em cada aventura.</p>
+            </div>
+        </section>
+
+        <!-- Seção "Sobre Nós" -->
+        <section>
+            <div class="card">
+                <h2><a href="about_us.html">Sobre Nós</a></h2>
+                <p>Bem-vindo ao Blood Haven Studios, onde as sombras ganham vida e o sangue se torna arte. Somos um estúdio indie apaixonado por criar experiências imersivas e impactantes. Cada jogo que desenvolvemos é uma jornada através de mundos sombrios, cheios de mistérios e desafios, onde a narrativa e o design se entrelaçam para deixar uma marca profunda. Nosso compromisso é oferecer aos jogadores não apenas jogos, mas experiências que toquem a alma e inspirem a reflexão. Venha explorar nosso universo único, onde cada detalhe conta uma história.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Nos contate : bloodhavenstudio@gmail.com</p>
+    </footer>
+</body>
+</html>

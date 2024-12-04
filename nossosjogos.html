@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the thrilling world of BloodHeaven Studios!">
+    <title>BloodHeaven Studios - Jogos</title>
+    <style>
+        :root {
+            --background-color: #121212;
+            --text-color: #ffffff;
+            --accent-color: #e60000; /* Vermelho intenso */
+            --navbar-bg: #000000;
+            --hover-bg: #333333;
+            --navbar-height: 60px;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--navbar-height);
+            background-color: var(--navbar-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 15px 20px;
+            margin: 0 20px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: var(--hover-bg);
+            color: #fff;
+            transform: scale(1.1);
+            border-radius: 5px;
+        }
+
+        /* Adicionando título "BloodHeaven" à navbar */
+        .navbar .logo {
+            position: absolute;
+            left: 20px;
+            font-size: 1.5em;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Restante do corpo */
+        .content {
+            padding: 20px;
+            margin-top: var(--navbar-height);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            color: var(--accent-color);
+            font-size: 3em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #ccc;
+        }
+
+        /* Barra de Pesquisa */
+        .search-bar {
+            margin-top: 30px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            font-size: 16px;
+            width: 60%;
+            max-width: 400px;
+            border-radius: 5px;
+            border: 2px solid var(--accent-color);
+            margin-right: 10px;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Catálogo de Jogos */
+        .games-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .game-card {
+            background-color: #222;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .game-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .game-card h3 {
+            color: var(--accent-color);
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .game-card p {
+            color: var(--text-color);
+        }
+
+        .game-card .button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: var(--text-color);
+            background-color: var(--accent-color);
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .game-card .button:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Caixa "Sobre Nós" */
+        #about {
+            background-color: #222;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: var(--text-color);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background-color: #d32f2f;
+        }
+
+        /* Otimização para mobile */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .navbar a {
+                padding: 10px;
+                margin: 0 10px;
+            }
+            .search-bar input {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">BloodHeaven</div> <!-- Logo à esquerda -->
+        <a href="index.html">Home</a>
+        <a href="about_us.html">Sobre Nós</a>
+    </div>
+    <div class="content">
+        <header id="home">
+            <h1>BloodHeaven Studios</h1>
+            <p>Onde o abismo encontra a criação.</p>
+        </header>
+
+        <!-- Barra de Pesquisa -->
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Busque por jogos..." onkeyup="searchGames()">
+            <button onclick="searchGames()">Buscar</button>
+        </div>
+
+        <!-- Catálogo de Jogos -->
+        <section>
+            <div class="games-container">
+                <div class="game-card">
+                    <img src="trailler_capa.jpg" alt="Jogo 1">
+                    <h3>O SENTINELA DO ABISMO</h3>
+                    <p>Acesse para mais informações</p>
+                    <a href="abismo.html" class="button">Acessar</a>
+                </div>
+                <div class="game-card">
+                    <img src="game2.jpg" alt="Jogo 2">
+                    <h3>Jogo 2</h3>
+                    <p>Descrição do jogo 2.</p>
+                    <a href="#" class="button">Saiba mais</a>
+                </div>
+                <div class="game-card">
+                    <img src="game3.jpg" alt="Jogo 3">
+                    <h3>Jogo 3</h3>
+                    <p>Descrição do jogo 3.</p>
+                    <a href="#" class="button">Saiba mais</a>
+                </div>
+                <div class="game-card">
+                    <img src="game4.jpg" alt="Jogo 4">
+                    <h3>Jogo 4</h3>
+                    <p>Descrição do jogo 4.</p>
+                    <a href="#" class="button">Saiba mais</a>
+                </div>
+            </div>
+        </section>
+
+    <footer>
+        <p>&copy; 2024 BloodHeaven Studios. Todos os direitos reservados.</p>
+    </footer>
+
+    <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <script>
+        // Função de alternância de tema
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+        }
+
+        // Pesquisa de jogos
+        function searchGames() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const games = document.querySelectorAll('.game-card');
+            games.forEach(game => {
+                const gameTitle = game.querySelector('h3').textContent.toLowerCase();
+                if (gameTitle.includes(query)) {
+                    game.style.display = 'block';
+                } else {
+                    game.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
